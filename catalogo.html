@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MR iPhones MT - Catálogo</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #fafafa; margin: 0; }
+    header { background: #2e2e2e; color: white; padding: 20px; text-align: center; font-size: 2rem; }
+    .filtros { text-align: center; margin: 10px; }
+    .filtros button {
+      padding: 8px 16px; margin: 5px; background: #444; color: white;
+      border: none; border-radius: 5px; cursor: pointer;
+    }
+    .produto { background: white; border-radius: 6px; padding: 15px; margin: 15px auto; width: 90%; max-width: 400px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center;
+    }
+    .produto img { max-width: 100%; border-radius: 4px; margin-bottom: 10px; }
+    .produto h3 { margin: 5px 0; }
+    .produto a {
+      display: inline-block; margin-top: 10px; background: #25d366; color: white;
+      padding: 10px 20px; border-radius: 5px; text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>MR iPhones MT</header>
+  <div class="filtros">
+    <button onclick="filtrar('Todos')">Todos</button>
+    <button onclick="filtrar('iPhone')">iPhone</button>
+    <button onclick="filtrar('iPad')">iPad</button>
+    <button onclick="filtrar('MacBook')">MacBook</button>
+    <button onclick="filtrar('JBL')">JBL</button>
+    <button onclick="filtrar('Starlink')">Starlink</button>
+  </div>
+  <div id="produtos-container"></div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+  <script src="produtos.js"></script>
+</body>
+</html>
