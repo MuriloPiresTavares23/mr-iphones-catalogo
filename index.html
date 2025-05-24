@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Painel Administrativo - MR iPhones MT</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f2f2f2; }
+    h1 { text-align: center; }
+    .tabs { display: flex; justify-content: center; margin-bottom: 20px; }
+    .tab { margin: 0 10px; padding: 10px 20px; background: #ddd; cursor: pointer; border-radius: 5px; }
+    .tab.active { background: #666; color: #fff; }
+    .content { display: none; }
+    .content.active { display: block; }
+    input, textarea, select, button { display: block; margin: 10px auto; padding: 10px; width: 90%; max-width: 400px; }
+    .produto { background: #fff; padding: 10px; margin: 10px auto; border-radius: 5px; max-width: 600px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
+    img { max-width: 100px; display: block; margin: 10px auto; }
+  </style>
+</head>
+<body>
+  <h1>MR iPhones MT - Painel Administrativo</h1>
+  <div class="tabs">
+    <div class="tab active" onclick="trocarAba('adicionar')">Adicionar Produto</div>
+    <div class="tab" onclick="trocarAba('gerenciar')">Gerenciar Produtos</div>
+  </div>
+
+  <div id="adicionar" class="content active">
+    <input type="text" id="nome" placeholder="Nome do produto" />
+    <textarea id="descricao" placeholder="Descrição"></textarea>
+    <input type="text" id="imagemUrl" placeholder="URL da imagem" oninput="atualizarPreview()" />
+    <select id="categoria">
+      <option value="iPhone">iPhone</option>
+      <option value="iPad">iPad</option>
+      <option value="MacBook">MacBook</option>
+      <option value="JBL">Caixa de Som JBL</option>
+      <option value="Starlink">Starlink</option>
+    </select>
+    <img id="preview" src="" alt="Pré-visualização da imagem" style="display:none;" />
+    <button onclick="adicionarProduto()">Adicionar</button>
+  </div>
+
+  <div id="gerenciar" class="content">
+    <div id="listaProdutos"></div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-storage-compat.js"></script>
+  <script src="produtos.js"></script>
+</body>
+</html>
