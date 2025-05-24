@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>MR iPhones MT - Painel Administrativo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>MR iPhones MT - Painel Administrativo</h1>
+  <div id="painel">
+    <input type="password" id="senha" placeholder="Senha de acesso">
+    <button onclick="autenticar()">Entrar</button>
+
+    <div id="conteudo" style="display:none;">
+      <div class="tabs">
+        <button onclick="trocarAba('adicionar')">Adicionar Produto</button>
+        <button onclick="trocarAba('gerenciar')">Gerenciar Produtos</button>
+      </div>
+      <div id="adicionar" class="aba">
+        <h2>Adicionar Produto</h2>
+        <input type="text" id="nome" placeholder="Nome do Produto">
+        <input type="text" id="categoria" placeholder="Categoria (iPhone, iPad, etc)">
+        <input type="file" id="imagem" accept="image/*">
+        <textarea id="descricao" placeholder="Descrição"></textarea>
+        <button onclick="adicionarProduto()">Salvar</button>
+      </div>
+      <div id="gerenciar" class="aba" style="display:none;">
+        <h2>Gerenciar Produtos</h2>
+        <div id="lista-produtos"></div>
+      </div>
+    </div>
+  </div>
+  <script src="firebase-config.js"></script>
+  <script src="produtos.js"></script>
+</body>
+</html>

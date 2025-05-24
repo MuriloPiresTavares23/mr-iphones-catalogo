@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>MR iPhones MT - Catálogo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>MR iPhones MT</h1>
+    <nav id="categorias">
+      <button onclick="filtrar('Todos')">Todos</button>
+      <button onclick="filtrar('iPhone')">iPhone</button>
+      <button onclick="filtrar('iPad')">iPad</button>
+      <button onclick="filtrar('MacBook')">MacBook</button>
+      <button onclick="filtrar('JBL')">JBL</button>
+      <button onclick="filtrar('Starlink')">Starlink</button>
+    </nav>
+  </header>
+  <main id="produtos-container"></main>
+  <script src="firebase-config.js"></script>
+  <script src="produtos.js"></script>
+</body>
+</html>
